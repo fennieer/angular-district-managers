@@ -1,0 +1,13 @@
+$font-stack:  "Arial", "Myriad Pro", sans-serif;
+$primary-color: #FAF9F3;
+$font-header-color: #554344;
+
+.header {
+  font: 100% $font-stack;
+  text-transform: uppercase;
+  background: $primary-color;
+  color: $font-header-color;
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+}

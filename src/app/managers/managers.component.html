@@ -1,0 +1,25 @@
+<div id="filterContainer">
+    <label><b>Filter By Age</b></label><br>
+    <select id="selectBox" (change)="getAges()">
+      <option>Select age</option>
+      <option *ngFor="let age of filteredAgeOption" value={{age.value}}>
+        {{ age.option }} 
+      </option>
+    </select>
+</div>
+<div id="container" *ngIf="managers">
+    <div class="card" *ngFor="let manager of managers | async ">
+        <div class="profileImg">
+            <img src="assets/img/userphoto-prime1.jpg">
+        </div>
+        <div class="profileDetails">
+            <h2>{{ manager.name }}</h2>
+            <p>Email: <b>{{ manager.email }}</b></p>
+            <p>Mobile: <b>{{ manager.phone }}</b></p>
+            <p>Company: <b>{{ manager.company }}</b></p>
+            <p>Address: <b>{{ manager.address.suite }}, {{ manager.address.street }}, {{ manager.address.city }}, {{ manager.address.zipcode }}</b></p>
+            <p>Website: <b>{{ manager.website }}</b></p>
+            <p>Age: <b>{{ manager.age }}</b></p>
+        </div>
+    </div>
+</div>

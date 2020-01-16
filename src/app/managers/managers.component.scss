@@ -1,0 +1,109 @@
+$font-stack:  "Arial", "Myriad Pro", sans-serif;
+$font-size: 0.875rem;
+$h1-font-size: 1.25rem;
+$mobile-font-size: 80%;
+$mobile-card-padding: 2rem 2rem;
+
+
+#container {
+    max-width: 1200px;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+}
+
+#filterContainer {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 10px;
+    border-bottom: 2px solid #EAEAEA;
+}
+
+img {
+    border-radius: 50%;
+}
+
+p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: $h1-font-size;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 130px auto;
+    grid-gap: 5px;
+    margin: 0.75rem;
+    padding: 1.75rem 1.75rem;
+    background: #ffffff;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+    overflow: hidden;
+    transition: all .2s linear;
+}
+
+.profileImg {
+    padding-top: 10px;
+}
+
+#selectBox {
+    font: $font-size $font-stack;
+    position: relative;
+    width: 300px;
+    height: 50px;
+    padding: 12px;
+    margin: 10px auto;
+    color: #181818;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    background: #fff url(/assets/img/arrow.jpg) no-repeat right;
+}
+
+@media screen and (max-width: 767px) {
+    #selectBox {
+        width: 100%;
+    }
+
+    #container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+    }
+
+    .card {
+        padding: $mobile-card-padding;
+        display: inline-block;
+    }
+
+    .profileDetails > h2 { 
+        text-align: center;
+    }
+
+    .profileImg {
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    #container {
+        font-size: $mobile-font-size;
+    }
+
+    .card {
+        padding: $mobile-card-padding;
+        display: inline-block;
+    }
+
+    .profileDetails > h2 { 
+        text-align: center;
+    }
+
+    .profileImg {
+        text-align: center;
+    }
+}
