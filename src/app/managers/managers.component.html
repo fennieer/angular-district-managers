@@ -1,14 +1,30 @@
 <div id="filterContainer">
     <label><b>Filter By Age</b></label><br>
-    <select id="selectBox" (change)="getAges()">
+    <!-- <select id="selectBox" (change)="filterBy()">
       <option>Select age</option>
-      <option *ngFor="let age of filteredAgeOption" value={{age.value}}>
+      <option *ngFor="let age of filteredAgeOption" value="{{age.option}}">
         {{ age.option }} 
       </option>
     </select>
+    <div *ngFor="let age of userAgeData">
+        {{ age | json }}
+    </div> -->
+    <!-- <label><b>Filter By Age</b></label><br>
+    <select  id="selectBox" [(ngModel)]="selectedFilter">
+      <option *ngFor="let user of userAgeData" [ngValue]="user">{{user.age | ageGroup}}</option>
+    </select> -->
+    <br>
+    <div class="btn-wrapper">
+      <button class="btn-filter" (click)="filterBy('All')">All</button>
+      <button class="btn-filter" (click)="filterBy('20 and below')">20 and below</button>
+      <button class="btn-filter" (click)="filterBy('21 to 39')">21 to 39</button>
+      <button class="btn-filter" (click)="filterBy('40 and above')">40 and above</button>
+    </div>
+    <br>
+    <!-- {{ selectedFilter | json }} -->
 </div>
-<div id="container" *ngIf="managers">
-    <div class="card" *ngFor="let manager of managers | async ">
+<div id="container" *ngIf="selectedFilter">
+    <div class="card" *ngFor="let manager of selectedFilter ">
         <div class="profileImg">
             <img src="assets/img/userphoto-prime1.jpg">
         </div>
@@ -23,3 +39,19 @@
         </div>
     </div>
 </div>
+<!-- <div id="container" *ngIf="managers">
+  <div class="card" *ngFor="let manager of managers | async ">
+      <div class="profileImg">
+          <img src="assets/img/userphoto-prime1.jpg">
+      </div>
+      <div class="profileDetails">
+          <h2>{{ manager.name }}</h2>
+          <p>Email: <b>{{ manager.email }}</b></p>
+          <p>Mobile: <b>{{ manager.phone }}</b></p>
+          <p>Company: <b>{{ manager.company }}</b></p>
+          <p>Address: <b>{{ manager.address.suite }}, {{ manager.address.street }}, {{ manager.address.city }}, {{ manager.address.zipcode }}</b></p>
+          <p>Website: <b>{{ manager.website }}</b></p>
+          <p>Age: <b>{{ manager.age }}</b></p>
+      </div>
+  </div>
+</div> -->

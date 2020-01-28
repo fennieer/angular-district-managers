@@ -63,6 +63,23 @@ h2 {
     background: #fff url(/assets/img/arrow.jpg) no-repeat right;
 }
 
+.btn-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.btn-filter {
+    font: $font-size $font-stack;
+    position: relative;
+    width: 200px;
+    height: 50px;
+    padding: 12px;
+    margin: 10px auto;
+    color: #181818;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+}
+
 @media screen and (max-width: 767px) {
     #selectBox {
         width: 100%;
@@ -72,6 +89,15 @@ h2 {
         display: grid;
         grid-template-columns: auto;
         grid-gap: 10px;
+    }
+
+    .btn-wrapper {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .btn-filter {
+        width: 100px;
     }
 
     .card {
