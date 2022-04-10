@@ -1,3 +1,3 @@
 # District Manager Landing Page
 
-https://district-manager-pfer.web.app/
+To view live demo: https://district-manager-pfer.web.app/
